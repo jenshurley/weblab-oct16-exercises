@@ -1,19 +1,25 @@
 /**
  * Created by Jen on 10/16/2014.
  */
-function coverBricks(small,large,total_length){
+function brickWall(small,large,total_length){
     //number of small, number of large, length of wall needing to be covered
    //brick units are numbers, total_length is feet
-    //changing brick lengths to reflect actual brick standard lengths
-    if( (((small*2.25)+(large*8))/12)>= total_length){
-        return "true";
+    //brick lengths to reflect actual brick standard lengths
+   var small = small*2.25;
+   var large = large*8;
+
+    var smallfeet = small/12;
+    var largefeet = large/12;
+
+    if( (smallfeet+largefeet)>= total_length){
+        return "Bricks will cover the length of the wall.";
     }else{
-        return "false"
+        return "You need more bricks."
      }
 
 }
 
-console.log(coverBricks (10, 10, 90));
+console.log(brickWall (20, 5, 8));
 
-//do over using variables. add conversion before comparison. extensible?
+//do over using variables. add conversion before comparison.
 
